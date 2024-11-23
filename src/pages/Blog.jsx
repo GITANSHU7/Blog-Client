@@ -9,7 +9,7 @@ import { deletePost1, getAllPostData } from "../redux/postSlice";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBin4Fill } from "react-icons/ri";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
-import { Button, Modal } from "flowbite-react";
+import { Button, Modal, Spinner } from "flowbite-react";
 import toast from "react-hot-toast";
 import AddPost from "../conponents/AddPost";
 
@@ -93,6 +93,14 @@ const BlogList = () => {
     _id,
     blogData,
   }) => {
+
+    if (loading) {
+      return (
+        <div className="w-80 h-96 rounded-lg shadow-lg bg-white dark:bg-gray-800 flex flex-col">
+         <Spinner aria-label="Extra small spinner example" size="xs" />
+        </div>
+      );
+    } else {
     return (
       <div className="w-80 h-96 rounded-lg shadow-lg bg-white dark:bg-gray-800 flex flex-col">
         {/* Image Section */}
@@ -197,9 +205,14 @@ const BlogList = () => {
         </Modal>
       </div>
     );
+  }
   };
+
+ 
+
   return (
     <>
+    
       <div className="flex flex-wrap justify-center gap-6  p-6 bg-gradient-to-r dark:bg-zinc-700 bg-blue-200 to-purple-200 ">
         
         {data.length === 0 && !loading && (

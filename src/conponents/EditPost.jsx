@@ -43,6 +43,7 @@ function EditPost({
       onClose();
       reloadData()
       setPostToEdit(null);
+      toast.success("Post updated successfully");
     } catch (error) {
       console.error(error.message || "Error updating user");
       toast.error(error.response?.data?.message || "Error updating user");

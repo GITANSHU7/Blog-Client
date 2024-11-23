@@ -34,8 +34,8 @@ const BlogDetail = () => {
     }, []);
 
     return (
-      <div className="bg-gray-100 min-h-screen p-6">
-        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-gray-100 min-h-screen p-6 dark:bg-zinc-700">
+        <div className="max-w-4xl mx-auto dark:text-white bg-white dark:bg-[#1F2937] rounded-lg shadow-md overflow-hidden">
           {/* Header Section */}
           <div className="bg-green-900 p-6">
             <h2 className="text-white text-2xl font-bold">{data?.title}</h2>
@@ -52,8 +52,8 @@ const BlogDetail = () => {
             />
           </div>
 
-          <div className="p-6">
-            <h3 className="text-xl font-bold text-gray-800">
+          <div className="p-6" >
+            <h3 className="text-xl font-bold text-gray-800 dark:text-white">
               {data?.sub_heading}
             </h3>
             <div
