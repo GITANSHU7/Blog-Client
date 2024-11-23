@@ -69,15 +69,14 @@ function AddPost({ isOpen, onClose, handleCreateClick, reloadData }) {
             loader.file.then((file) => {
               data.append("file", file);
 
-              // Replace with your backend API URL
-              fetch("http://localhost:8000/upload", {
+              fetch(`${import.meta.env.VITE_BACKEND_URL}/upload`, {
                 method: "POST",
                 body: data,
               })
                 .then((response) => response.json())
                 .then((result) => {
                   resolve({
-                    default: result.url, // URL of the uploaded image
+                    default: result.url, 
                   });
                 })
                 .catch((error) => {
